@@ -28,7 +28,7 @@ __pycache__/
 venv/
 env/
 ENV/
-
+actions-runner-linux-x64-2.337.0.tar.gz
 # =====================
 # Flask / Local
 # =====================

@@ -554,17 +554,17 @@ Build and push to Docker Hub:
 
 ```bash
 cd runner-image
-docker build -t <DOCKERHUB_USER>/gha-runner:2.328.0 .
-docker push <DOCKERHUB_USER>/gha-runner:2.328.0
+docker build -t <DOCKERHUB_USER>/gha-runner:2.329.0 .
+docker push <DOCKERHUB_USER>/gha-runner:2.329.0
 ```
 
 Optional: host in a local registry for your lab server:
 
 ```bash
 docker run -d --restart=always -p 5000:5000 --name registry registry:2
-docker pull <DOCKERHUB_USER>/gha-runner:2.328.0
-docker tag <DOCKERHUB_USER>/gha-runner:2.328.0 localhost:5000/gha-runner-new:2.328.0
-docker push localhost:5000/gha-runner:2.328.0
+docker pull <DOCKERHUB_USER>/gha-runner:2.329.0
+docker tag <DOCKERHUB_USER>/gha-runner:2.329.0 localhost:5000/gha-runner-new:2.329.0
+docker push localhost:5000/gha-runner:2.329.0
 ```
 
 If clients use an insecure local registry, configure `/etc/docker/daemon.json` on each client:
@@ -608,7 +608,7 @@ cd ansible
 ansible-playbook install_github_runner_container.yml --extra-vars 'runner_labels=self-hosted,lab,mytag runner_workdir=/runner/_work' -e "image_ref=deenamanick/my-github-runner:latest"
 ```
 
-By default the playbook pulls `localhost:5000/gha-runner:2.328.0`. Change `image_ref` in `ansible/install_github_runner_container.yml` to use your Docker Hub image if you prefer.
+By default the playbook pulls `localhost:5000/gha-runner:2.329.0`. Change `image_ref` in `ansible/install_github_runner_container.yml` to use your Docker Hub image if you prefer.
 
 ### 3) Verify
 
